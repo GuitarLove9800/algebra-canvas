@@ -1,72 +1,47 @@
 
+        :root{
+            --bg-primary: #0f172a;        /* Azul medianoche profundo */
+            --surface-glass: rgba(30, 41, 59, 0.65); /* Fondo traslúcido */
+            --border-glass: rgba(255, 255, 255, 0.08); /* Borde sutil */
+            --accent: #38bdf8;            /* Azul cielo/cian brillante */
+            --accent-glow: rgba(56, 189, 248, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --radius-md: 14px;
+            --radius-sm: 8px;
+        }
+
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
         body {
-            font-family: Arial, Helvetica, sans-serif;
-            max-width: 700px;
-            margin: 20px auto;
-            padding: 10px;
-            color: #222;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-primary);
+            background-image: 
+            radial-gradient(at 10% 10%, rgba(56, 189, 248, 0.08) 0px, transparent 40%),
+            radial-gradient(at 90% 90%, rgba(99, 102, 241, 0.08) 0px, transparent 40%);
+            background-attachment: fixed;
+            color: var(--text-primary);
+            max-width: 850px;
+            margin: 40px auto;
+            padding: 0 20px;
+            line-height: 1.6;
         }
-
-        h1 {
-            color: #1a5276;
+        
+        h1{
+            font-size: 2rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 25px;
+            display: inline-block;
             cursor: pointer;
-            border-bottom: 2px solid #1a5276;
-            padding-bottom: 5px;
+            transition: color 0.25s ease, transform 0.25s ease;
         }
-
-        p {
-            font-size: 16px;
-            cursor: pointer;
-            background-color: #f2f2f2;
-            padding: 10px;
-            border-radius: 10px;
+        
+        h1:hover{
+            color: var(--accent);
+            transform: translateY(-2px);
         }
-
-        table {
-            width: 100%;
-            border-collapse: separate;
-            border-spacing: 0;
-            margin: 15px 0;
-            border-radius: 10px;
-            overflow: hidden;
-        }
-
-        th, td {
-            border: 1px solid #ccc;
-            padding: 8px;
-            text-align: left;
-            cursor: pointer;
-        }
-
-        th {
-            background-color: #2980b9;
-            color: white;
-        }
-
-        ul, ol {
-            background-color: #fafafa;
-            padding: 15px 30px;
-            border: 1px solid #ddd;
-        }
-
-        li {
-            margin: 5px 0;
-            cursor: pointer;
-            padding: 4px;
-        }
-
-        /* Las clases especiales */
-
-        .oculto {
-            display: none;
-        }
-
-        .resaltado {
-            background-color: #d4efdf;
-            color: #196f3d;
-        }
-
-        .cambio-color {
-            color: #c0392b;
-        }
-  
