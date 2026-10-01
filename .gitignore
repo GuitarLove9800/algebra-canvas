@@ -1,7 +1,5 @@
-cat <<EOF > .gitignore
 .DS_Store
 Thumbs.db
 *.rar
 *.zip
 .vscode/
-EOF
