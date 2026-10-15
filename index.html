@@ -5,105 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog Matemático Interactivo</title>
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/components.css">
 </head>
-
 <body>
 
-    <h1 id="titulo" onclick="cambiarColorTitulo()">
-        Blog Matemático Interactivo
-    </h1>
+    <h1 id="titulo" onclick="cambiarColorTitulo()">Blog Matemático Interactivo</h1>
 
-    <p onclick="alternarLista('conceptos')">
-        Conceptos Básicos (Haz clic aquí para mostrar u ocultar lista)
+    <h2 class="subtitulo">Entradas del Blog</h2>
+    
+    <!-- Aquí JavaScript inyectará las entradas desde posts.js -->
+    <ul id="lista-entradas"></ul>
+
+    <h2 class="subtitulo">Recursos y Conceptos Básicos</h2>
+
+    <p onclick="alternarLista('conceptos')" style="cursor: pointer;">
+        Conceptos Rápidos (Haz clic para mostrar u ocultar)
     </p>
 
-    <ul id="conceptos">
-        <li onclick="resaltarElemento(this)">
-            Álgebra: Manipulación de símbolos y ecuaciones.
-        </li>
-
-        <li onclick="resaltarElemento(this)">
-            Geometría: Estudio de las propiedades de figuras y espacios.
-        </li>
-
-        <li onclick="resaltarElemento(this)">
-            Cálculo: Análisis del cambio y del movimiento.
-        </li>
-
-        <li onclick="resaltarElemento(this)">
-            Estadística: Análisis y tratamiento de datos.
-        </li>
+    <ul id="conceptos" class="interactivo oculto">
+        <li onclick="resaltarElemento(this)">Álgebra: Manipulación de símbolos y ecuaciones.</li>
+        <li onclick="resaltarElemento(this)">Geometría: Estudio de las propiedades de figuras y espacios.</li>
+        <li onclick="resaltarElemento(this)">Cálculo: Análisis del cambio y del movimiento.</li>
+        <li onclick="resaltarElemento(this)">Estadística: Análisis y tratamiento de datos.</li>
     </ul>
 
-    <p onclick="alternarLista('formulas')">
-        Tabla de fórmulas (Haz clic en cualquier celda para cambiar su color)
-    </p>
-
-    <table id="formulas">
-        <tr>
-            <th>Tema</th>
-            <th>Fórmula</th>
-        </tr>
-
-        <tr>
-            <td onclick="resaltarElemento(this)">
-                Área del triángulo
-            </td>
-
-            <td onclick="resaltarElemento(this)">
-                Base por altura dividido entre 2
-            </td>
-        </tr>
-
-        <tr>
-            <td onclick="resaltarElemento(this)">
-                Teorema de Pitágoras
-            </td>
-
-            <td onclick="resaltarElemento(this)">
-                a elevado al cuadrado más b elevado al cuadrado igual a c elevado al cuadrado
-            </td>
-        </tr>
-
-        <tr>
-            <td onclick="resaltarElemento(this)">
-                Perímetro del círculo
-            </td>
-
-            <td onclick="resaltarElemento(this)">
-                2 por Pi por radio
-            </td>
-        </tr>
-    </table>
-
-    <p onclick="alternarLista('pasos')">
-        Pasos para resolver un problema
-        (haz clic aquí para mostrar u ocultar los pasos)
-    </p>
-
-    <ol id="pasos">
-        <li onclick="resaltarElemento(this)">
-            Comprender el problema planteado.
-        </li>
-
-        <li onclick="resaltarElemento(this)">
-            Trazar un plan o seleccionar la fórmula.
-        </li>
-
-        <li onclick="resaltarElemento(this)">
-            Ejecutar las operaciones requeridas.
-        </li>
-
-        <li onclick="resaltarElemento(this)">
-            Revisar y verificar la solución.
-        </li>
-    </ol>
-
-    <footer>
-        <p>&copy; 2026 Algebra Canvas. Todos los derechos reservados.</p>
-    </footer>
-<script src="js/main.js"></script>
+    <!-- Archivo de configuración que contiene el arreglo de entradas -->
+    <script src="js/post.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
-
