@@ -1,40 +1,46 @@
-# algebra-canvas
-Plataforma web interactiva orientado al aprendizaje, consulta y resolución de conceptos clave de fundamentos de algebra.
+# Blog Matemático Interactivo (algebra-canvas)
 
-## Caracteristicas
-- **Conceptos Interactivos** Despliege dinámico de definiciones esenciales de álgebra, geometría, cálculo y estadistica.
+Plataforma web orientada al aprendizaje, consulta y resolución práctica de conceptos clave de fundamentos de álgebra y matemáticas esenciales, estructurada con un diseño visual tipo cuaderno técnico.
 
-- **Formulario y Reglas** Tablas Interactivas con Fórmulas algebraicas.
+---
 
-- **Metodologia Paso a Paso** Guia estructurada para la resolución analítica de problemas.
+## Características
 
-- **Modulos especializados** Secciones dedicadas para algebra y proximamente para calculo, geometria y estadistica.
+- **Diseño Estilo Hoja de Cuaderno:** Interfaz visual con fondo cuadriculado, margen guía, cajas de fórmulas y tipografía Poppins en negro mate y azul tecnológico.
+- **Renderizado Dinámico de Temas:** Generación automática de tarjetas flotantes (*cards*) en el índice principal a partir de un arreglo centralizado de publicaciones.
+- **Carga Modular de Apuntes:** Inyección bajo demanda del contenido teórico y analítico desde scripts específicos (`factorizacion.js`, `productos-notables.js`) en una plantilla unificada.
+- **Demostraciones Paso a Paso:** Ejemplos prácticos estructurados con desglose secuencial de pasos, expresiones algebraicas resaltadas y resultados destacados.
+- **Sección de Conceptos Rápidos:** Panel colapsable/interactivo que permite alternar y resaltar definiciones fundamentales de álgebra, geometría, cálculo y estadística.
 
-## Tecnologias
+---
 
-- **HTML5** Marcado sematico y estructura de vistas.
-- **CSS3** Diseño responsivo, transiciones y estilos de componentes.
-- **JavaScript (ES6)** Manipulación dinamica del DOM e interactividad de elementos.
+## Tecnologías Utilizadas
+
+- **HTML5:** Marcado semántico para la portada (`index.html`) y la plantilla de lectura (`pages/entradas.html`).
+- **CSS3:** Variables CSS (`:root`), cuadrículas adaptables (*CSS Grid* y *Flexbox*), patrones de fondo, sombras flotantes y diseño adaptable a pantallas móviles.
+- **JavaScript (ES6):** Manipulación del DOM, captura de parámetros en URL (`URLSearchParams`) y carga asíncrona/dinámica de scripts.
+- **Google Fonts:** Tipografía *Poppins* (pesos 400 a 800).
+
+---
 
 ## Estructura del Proyecto
 
 ```text
-algebra-canvas/
-├── assets/             # Recursos multimedia y gráficos
-│   ├── icons/          # Iconografía e isotipos
-│   └── img/            # Diagramas matemáticos e ilustraciones
+blog-matematico/
+├── assets/
+│   ├── icons/                  # Iconografía y recursos gráficos
+│   └── img/                    # Diagramas e ilustraciones
 ├── css/
-│   ├── components.css  # Estilos modulares (calculadoras, tablas, tarjetas)
-│   └── styles.css      # Estilos globales, tipografía y maquetación base
+│   ├── entradas.css            # Estilos específicos / complementarios de lectura
+│   └── styles.css              # Hoja de estilos global, tarjetas flotantes y cuaderno
 ├── js/
-│   ├── algebra.js      # Lógica de cálculo matemático (ecuaciones, matrices)
-│   ├── script.js       # Controladores de eventos e interactividad global
-│   └── utils.js        # Funciones auxiliares y validaciones reutilizables
-├── pages/              # Vistas secundarias por asignatura
-│   ├── algebra.html    # Módulo interactivo de álgebra
-│   ├── calculo.html    # Módulo de límites, derivadas e integrales
-│   ├── estadistica.html# Módulo de tratamiento de datos
-│   └── geometria.html  # Módulo de fórmulas y figuras geométricas
-├── .gitignore          # Reglas de exclusión para Git
-├── index.html          # Vista principal y panel de navegación
-└── README.md           # Documentación técnica del proyecto
+│   ├── entradas.js             # Lógica para leer el parámetro id y cargar el tema correspondiente
+│   ├── main.js                 # Inyección dinámica de cards en la portada e interactividad
+│   └── post.js                 # Registro y metadata de las publicaciones (id, título, fecha, archivo)
+├── pages/
+│   ├── entradas.html           # Plantilla contenedora para la visualización del apunte
+│   ├── factorizacion.js        # Contenido teórico, fórmulas y ejemplos de factorización
+│   └── productos-notables.js   # Contenido teórico y ejercicios de productos notables
+├── .gitignore                  # Exclusiones para control de versiones en Git
+├── index.html                  # Página principal (hero, cards flotantes y conceptos rápidos)
+└── README.md                   # Documentación técnica del repositorio

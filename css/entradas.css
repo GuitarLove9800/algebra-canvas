@@ -1,17 +1,389 @@
+:root {
+    --bg-body: #f8fafc;
+    --texto-oscuro: #0f172a;
+    --texto-secundario: #475569;
+    --azul-tech: #0284c7;
+    --azul-hover: #0369a1;
+    --azul-claro: #e0f2fe;
+    --borde: #cbd5e1;
+    
+    /* Cuaderno */
+    --linea-cuadricula: rgba(2, 132, 199, 0.08);
+    --margen-cuaderno: rgba(239, 68, 68, 0.45);
+    --sombra-cuaderno: 0 15px 35px -5px rgba(15, 23, 42, 0.12), 0 0 0 1px rgba(203, 213, 225, 0.5);
+    --sombra-card: 0 10px 25px -5px rgba(15, 23, 42, 0.08), 0 8px 10px -6px rgba(15, 23, 42, 0.04);
+    --sombra-card-hover: 0 20px 30px -10px rgba(2, 132, 199, 0.2), 0 10px 15px -5px rgba(15, 23, 42, 0.08);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 body {
-            font-family: Arial, sans-serif;
-            max-width: 700px;
-            margin: 20px auto;
-            padding: 10px;
-            color: #222;
-        }
-        header {
-            border-bottom: 2px solid #1a7620;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-        }
-        .volver {
-            color: #2980b9;
-            text-decoration: none;
-            font-weight: bold;
-        }
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-body);
+    color: var(--texto-oscuro);
+    line-height: 1.6;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.contenedor-principal {
+    max-width: 900px;
+    width: 100%;
+}
+
+/* ===================================================
+   ESTILOS DE LA PÁGINA DE INICIO (HOME)
+   =================================================== */
+.hero {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.titulo-principal {
+    font-size: 2.4rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    color: var(--texto-oscuro);
+    margin-bottom: 12px;
+    cursor: pointer;
+    user-select: none;
+    transition: color 0.3s ease;
+}
+
+.titulo-principal.cambio-color {
+    color: var(--azul-tech) !important;
+}
+
+.destacado-azul {
+    color: var(--azul-tech);
+}
+
+.descripcion-hero {
+    font-size: 1.05rem;
+    color: var(--texto-secundario);
+    max-width: 620px;
+    margin: 0 auto;
+}
+
+.subtitulo {
+    font-size: 1.35rem;
+    font-weight: 700;
+    margin-bottom: 24px;
+    color: var(--texto-oscuro);
+    border-left: 4px solid var(--azul-tech);
+    padding-left: 12px;
+}
+
+.grid-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    margin-bottom: 45px;
+}
+
+.card-flotante {
+    background: #ffffff;
+    border: 1px solid var(--borde);
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: var(--sombra-card);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-flotante:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--sombra-card-hover);
+    border-color: rgba(2, 132, 199, 0.4);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.card-tag {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    padding: 3px 9px;
+    background-color: var(--azul-claro);
+    color: var(--azul-tech);
+    border-radius: 6px;
+}
+
+.fecha-post {
+    font-size: 0.8rem;
+    color: var(--texto-secundario);
+    font-weight: 500;
+}
+
+.card-titulo {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--texto-oscuro);
+    margin-bottom: 8px;
+}
+
+.resumen-post {
+    font-size: 0.92rem;
+    color: var(--texto-secundario);
+    margin-bottom: 20px;
+}
+
+.card-btn {
+    align-self: flex-start;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--azul-tech);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.card-btn:hover {
+    color: var(--azul-hover);
+    transform: translateX(4px);
+}
+
+/* Acordeón */
+.seccion-conceptos {
+    background: #ffffff;
+    border: 1px solid var(--borde);
+    border-radius: 14px;
+    padding: 20px;
+    box-shadow: var(--sombra-card);
+}
+
+.acordeon-header {
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--texto-oscuro);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    user-select: none;
+}
+
+.interactivo {
+    list-style: none;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #f1f5f9;
+}
+
+.interactivo li {
+    padding: 10px 14px;
+    border-radius: 8px;
+    margin-bottom: 6px;
+    cursor: pointer;
+    font-size: 0.92rem;
+    color: var(--texto-secundario);
+    transition: background 0.2s ease, padding-left 0.2s ease;
+}
+
+.interactivo li:hover {
+    background: #f1f5f9;
+    padding-left: 18px;
+}
+
+.oculto { display: none; }
+.resaltado {
+    background-color: var(--azul-claro) !important;
+    color: var(--azul-tech) !important;
+    font-weight: 600;
+}
+
+/* ===================================================
+   ESTILO HOJA DE CUADERNO TÉCNICO (ENTRADAS / TEMAS)
+   =================================================== */
+.cuaderno-hoja {
+    position: relative;
+    background-color: #ffffff;
+    /* Cuadrícula técnica matemática de 24px x 24px */
+    background-image: 
+        linear-gradient(to right, var(--linea-cuadricula) 1px, transparent 1px),
+        linear-gradient(to bottom, var(--linea-cuadricula) 1px, transparent 1px);
+    background-size: 24px 24px;
+    border-radius: 6px;
+    box-shadow: var(--sombra-cuaderno);
+    padding: 48px 48px 48px 75px; /* Espacio extra a la izquierda para el margen */
+    overflow: hidden;
+    margin: 20px 0 50px 0;
+}
+
+/* Línea vertical roja del margen del cuaderno */
+.cuaderno-hoja::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 55px;
+    width: 2px;
+    background-color: var(--margen-cuaderno);
+    z-index: 1;
+}
+
+.cuaderno-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    color: var(--azul-tech);
+    margin-bottom: 20px;
+    border-bottom: 2px dashed rgba(2, 132, 199, 0.25);
+    padding-bottom: 8px;
+}
+
+.apunte-fecha {
+    color: var(--texto-secundario);
+}
+
+.apunte-titulo {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--texto-oscuro);
+    line-height: 1.2;
+    margin-bottom: 16px;
+}
+
+.apunte-subtitulo {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--texto-oscuro);
+    margin: 32px 0 12px 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.apunte-texto {
+    font-size: 1rem;
+    color: var(--texto-secundario);
+    margin-bottom: 22px;
+    line-height: 1.7;
+}
+
+/* Caja de Fórmula / Teorema */
+.caja-regla {
+    background-color: #f0f9ff;
+    border: 1px solid #bae6fd;
+    border-left: 5px solid var(--azul-tech);
+    border-radius: 8px;
+    padding: 18px 24px;
+    margin: 24px 0;
+    box-shadow: 0 4px 6px -1px rgba(2, 132, 199, 0.05);
+}
+
+.regla-etiqueta {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-weight: 700;
+    color: var(--azul-tech);
+    margin-bottom: 6px;
+}
+
+.regla-formula {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--texto-oscuro);
+    font-family: 'Poppins', monospace;
+    letter-spacing: 0.5px;
+}
+
+/* Bloque de Ejemplos */
+.bloque-ejemplo {
+    background-color: #ffffff;
+    border: 1px solid var(--borde);
+    border-radius: 12px;
+    padding: 24px;
+    margin-top: 24px;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.05);
+}
+
+.ejemplo-badge {
+    display: inline-block;
+    background-color: #0f172a;
+    color: #ffffff;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 4px 10px;
+    border-radius: 6px;
+    margin-bottom: 12px;
+}
+
+.ejemplo-enunciado {
+    font-size: 1.05rem;
+    color: var(--texto-oscuro);
+    margin-bottom: 18px;
+}
+
+.lista-pasos {
+    list-style-position: inside;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.lista-pasos li {
+    font-size: 0.95rem;
+    color: var(--texto-secundario);
+    background: #f8fafc;
+    padding: 12px 16px;
+    border-radius: 8px;
+    border-left: 3px solid #cbd5e1;
+}
+
+.codigo-matematico {
+    font-weight: 600;
+    color: var(--azul-tech);
+    background-color: #e0f2fe;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+.resultado-destacado {
+    display: inline-block;
+    margin-top: 4px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #0369a1;
+    background-color: #e0f2fe;
+    border: 1px dashed var(--azul-tech);
+    padding: 4px 12px;
+    border-radius: 6px;
+}
+/* Adaptabilidad a pantallas pequeñas */
+@media (max-width: 640px) {
+    body {
+        padding: 20px 10px;
+    }
+    .cuaderno-hoja {
+        padding: 30px 20px 30px 45px;
+    }
+    .cuaderno-hoja::before {
+        left: 30px;
+    }
+    .apunte-titulo {
+        font-size: 1.7rem;
+    }
+}

@@ -4,31 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog Matemático Interactivo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Vinculación limpia -->
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
-    <h1 id="titulo" onclick="cambiarColorTitulo()">Blog Matemático Interactivo</h1>
+    <main class="contenedor-principal">
+        <header class="hero">
+            <h1 id="titulo" class="titulo-principal" onclick="cambiarColorTitulo()">
+                Blog <span class="destacado-azul">Matemático</span> Interactivo
+            </h1>
+            <p class="descripcion-hero">
+                Explora algoritmos, demostraciones y casos prácticos interactivos de álgebra y matemáticas fundamentales.
+            </p>
+        </header>
 
-    <h2 class="subtitulo">Entradas del Blog</h2>
-    
-    <!-- Aquí JavaScript inyectará las entradas desde posts.js -->
-    <ul id="lista-entradas"></ul>
+        <section class="seccion-entradas">
+            <h2 class="subtitulo">Temas y Entradas</h2>
+            <div id="lista-entradas" class="grid-cards"></div>
+        </section>
 
-    <h2 class="subtitulo">Recursos y Conceptos Básicos</h2>
+        <section class="seccion-conceptos">
+            <p class="acordeon-header" onclick="alternarLista('conceptos')">
+                <span>⚡ Conceptos Rápidos</span>
+                <small>(Haz clic para mostrar u ocultar)</small>
+            </p>
 
-    <p onclick="alternarLista('conceptos')" style="cursor: pointer;">
-        Conceptos Rápidos (Haz clic para mostrar u ocultar)
-    </p>
+            <ul id="conceptos" class="interactivo oculto">
+                <li onclick="resaltarElemento(this)"><strong>Álgebra:</strong> Manipulación de símbolos y ecuaciones.</li>
+                <li onclick="resaltarElemento(this)"><strong>Geometría:</strong> Estudio de las propiedades de figuras y espacios.</li>
+                <li onclick="resaltarElemento(this)"><strong>Cálculo:</strong> Análisis del cambio y del movimiento.</li>
+                <li onclick="resaltarElemento(this)"><strong>Estadística:</strong> Análisis y tratamiento de datos.</li>
+            </ul>
+        </section>
+    </main>
 
-    <ul id="conceptos" class="interactivo oculto">
-        <li onclick="resaltarElemento(this)">Álgebra: Manipulación de símbolos y ecuaciones.</li>
-        <li onclick="resaltarElemento(this)">Geometría: Estudio de las propiedades de figuras y espacios.</li>
-        <li onclick="resaltarElemento(this)">Cálculo: Análisis del cambio y del movimiento.</li>
-        <li onclick="resaltarElemento(this)">Estadística: Análisis y tratamiento de datos.</li>
-    </ul>
-
-    <!-- Archivo de configuración que contiene el arreglo de entradas -->
     <script src="js/post.js"></script>
     <script src="js/main.js"></script>
 </body>
