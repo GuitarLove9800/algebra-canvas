@@ -45,12 +45,10 @@
             color: var(--accent);
             transform: translateY(-2px);
         }
-
-          
         
         */
 
-              body {
+        body {
             font-family: Arial, sans-serif;
             max-width: 700px;
             margin: 20px auto;
