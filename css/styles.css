@@ -15,7 +15,7 @@
     --sombra-card-hover: 0 20px 30px -10px rgba(2, 132, 199, 0.2), 0 10px 15px -5px rgba(15, 23, 42, 0.08);
 }
 
-/* Reset universal corregido */
+/* Selector universal corregido */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -30,6 +30,7 @@ body {
     padding: 40px 20px;
     display: flex;
     justify-content: center;
+    transition: background-color 0.25s ease, color 0.25s ease;
 }
 
 .contenedor-principal {
@@ -360,4 +361,162 @@ body {
     .cuaderno-hoja { padding: 30px 18px 30px 42px; }
     .cuaderno-hoja::before { left: 26px; }
     .apunte-titulo { font-size: 1.6rem; }
+}
+
+/* ==========================================
+   MODO OSCURO
+   ========================================== */
+body.dark-mode,
+html.dark-mode body {
+    --bg-body: #090d16;
+    --texto-oscuro: #f1f5f9;
+    --texto-secundario: #94a3b8;
+    --borde: #1e293b;
+
+    --linea-cuadricula: rgba(56, 189, 248, 0.07);
+    --margen-cuaderno: rgba(248, 113, 113, 0.4);
+    --sombra-cuaderno: 0 15px 35px -5px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(30, 41, 59, 0.8);
+    --sombra-card: 0 10px 25px -5px rgba(0, 0, 0, 0.4), 0 8px 10px -6px rgba(0, 0, 0, 0.2);
+    --sombra-card-hover: 0 20px 30px -10px rgba(2, 132, 199, 0.3);
+}
+
+body.dark-mode .cuaderno-hoja,
+html.dark-mode .cuaderno-hoja {
+    background-color: #0f172a;
+}
+
+body.dark-mode .card-flotante,
+body.dark-mode .seccion-conceptos,
+body.dark-mode .bloque-ejemplo,
+html.dark-mode .card-flotante,
+html.dark-mode .seccion-conceptos,
+html.dark-mode .bloque-ejemplo {
+    background-color: #0f172a;
+    border-color: #1e293b;
+}
+
+body.dark-mode .caja-regla,
+html.dark-mode .caja-regla {
+    background-color: rgba(2, 132, 199, 0.12);
+    border-color: rgba(2, 132, 199, 0.3);
+}
+
+body.dark-mode .lista-pasos li,
+html.dark-mode .lista-pasos li {
+    background-color: #1e293b;
+    border-left-color: #334155;
+    color: #cbd5e1;
+}
+
+body.dark-mode .conceptos-lista li:hover,
+body.dark-mode .interactivo li:hover,
+html.dark-mode .interactivo li:hover {
+    background-color: #1e293b;
+}
+
+body.dark-mode table,
+html.dark-mode table {
+    background-color: #0f172a !important;
+    border-color: #1e293b !important;
+}
+
+body.dark-mode tbody tr,
+html.dark-mode tbody tr {
+    border-bottom-color: #1e293b !important;
+}
+
+/* Botón flotante para alternar tema */
+.btn-tema {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background-color: var(--azul-tech);
+    color: #ffffff;
+    border: none;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(2, 132, 199, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    z-index: 100;
+}
+
+.btn-tema:hover {
+    transform: scale(1.1);
+    background-color: var(--azul-hover);
+}
+
+
+
+/* TEMAS__________________________________________________________________________________________________________________________________________________*/
+/* ==========================================
+   EFECTO NEÓN PARA FÓRMULAS Y ECUACIONES
+   (Solo activo en Modo Oscuro)
+   ========================================== */
+
+/* 1. Caja principal de fórmulas con borde y resplandor cian */
+body.dark-mode .caja-regla,
+html.dark-mode .caja-regla {
+    background: rgba(14, 165, 233, 0.05);
+    border: 1px solid rgba(56, 189, 248, 0.4);
+    border-left: 5px solid #38bdf8;
+    box-shadow: 0 0 20px rgba(56, 189, 248, 0.15), inset 0 0 15px rgba(56, 189, 248, 0.05);
+}
+
+body.dark-mode .regla-etiqueta,
+html.dark-mode .regla-etiqueta {
+    color: #38bdf8;
+    text-shadow: 0 0 8px rgba(56, 189, 248, 0.6);
+}
+
+/* 2. Texto de la fórmula central en Neón Cyan */
+body.dark-mode .regla-formula,
+html.dark-mode .regla-formula {
+    color: #e0f2fe;
+    text-shadow: 
+        0 0 5px rgba(56, 189, 248, 0.8),
+        0 0 12px rgba(56, 189, 248, 0.5),
+        0 0 24px rgba(2, 132, 199, 0.3);
+    letter-spacing: 0.8px;
+}
+
+/* 3. Variables y expresiones inline (ej. x², 2ab) en Neón Azul Eléctrico */
+body.dark-mode .codigo-matematico,
+html.dark-mode .codigo-matematico {
+    color: #f83872;
+    background-color: rgba(255, 8, 66, 0.12);
+    border: 1px solid rgba(248, 56, 72, 0.35);
+    text-shadow: 0 0 8px rgba(248, 56, 56, 0.6);
+    box-shadow: 0 0 10px rgba(248, 56, 75, 0.15);
+}
+
+/* 4. Resultado final destacado en Neón Esmeralda / Verde Matrix */
+body.dark-mode .resultado-destacado,
+html.dark-mode .resultado-destacado {
+    color: #6ee7b7;
+    background: rgba(16, 185, 129, 0.12);
+    border: 1px solid #10b981;
+    text-shadow: 
+        0 0 6px rgba(52, 211, 153, 0.8),
+        0 0 15px rgba(16, 185, 129, 0.4);
+    box-shadow: 0 0 14px rgba(16, 185, 129, 0.2);
+}
+
+/* 5. Títulos de los casos con sutil resplandor */
+body.dark-mode .apunte-subtitulo,
+html.dark-mode .apunte-subtitulo {
+    color: #f8fafc;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.15);
+}
+
+/* 6. Margen de la hoja en Modo Oscuro (hilo láser neón tenue) */
+body.dark-mode .cuaderno-hoja::before,
+html.dark-mode .cuaderno-hoja::before {
+    background-color: rgba(244, 63, 94, 0.6);
+    box-shadow: 0 0 8px rgba(244, 63, 94, 0.5);
 }

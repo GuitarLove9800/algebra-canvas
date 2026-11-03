@@ -4,19 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title id="titulo-pagina">Cargando... - Blog Matemático</title>
+    <!-- Evitar parpadeo si ya estaba en modo oscuro -->
+    <script>
+        if (localStorage.getItem("tema_preferido") === "dark") {
+            document.documentElement.classList.add("dark-mode");
+        }
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Fira+Code:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
+
+    <!-- Botón de Modo Oscuro -->
+    <button id="toggle-tema" class="btn-tema" aria-label="Cambiar modo de color">🌙</button>
 
     <div class="contenedor-principal">
         <nav class="nav-entrada">
             <a href="../index.html" class="card-btn">← Volver al índice</a>
         </nav>
 
-        <!-- Contenedor estilo Hoja de Cuaderno -->
         <article class="cuaderno-hoja">
             <header class="cuaderno-header">
                 <span class="apunte-tag">Álgebra // Cuaderno de Estudio</span>
@@ -25,7 +33,6 @@
 
             <h1 id="titulo-entrada" class="apunte-titulo">Cargando título...</h1>
 
-            <!-- Aquí se inyecta la explicación y ejemplos -->
             <main id="contenido-entrada">
                 <p class="apunte-texto">Cargando contenido...</p>
             </main>

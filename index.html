@@ -4,13 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog Matemático Interactivo</title>
+    <!-- Prevenir parpadeo en modo oscuro -->
+    <script>
+        if (localStorage.getItem("tema_preferido") === "dark") {
+            document.documentElement.classList.add("dark-mode");
+        }
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <!-- Vinculación limpia -->
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+
+    <!-- Botón para alternar modo claro / oscuro -->
+    <button id="toggle-tema" class="btn-tema" aria-label="Cambiar modo de color">🌙</button>
 
     <main class="contenedor-principal">
         <header class="hero">
@@ -42,6 +50,7 @@
         </section>
     </main>
 
+    <!-- Scripts en orden al final del body -->
     <script src="js/post.js"></script>
     <script src="js/main.js"></script>
 </body>
