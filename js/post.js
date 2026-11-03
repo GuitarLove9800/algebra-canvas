@@ -46,21 +46,20 @@ const publicaciones = [
     titulo: "Factorización I",
     archivo: "factorizacion.js",
     fecha: "2026-10-13",
-    resumen: "Técnicas de factorización y casos prácticos."
+    resumen: "Factor común, agrupación, trinomio cuadrado perfecto y diferencia de cuadrados."
   },
   {
     id: "08pn",
     titulo: "Factorización II",
-    archivo: "factorizacion.js",
+    archivo: "factorizacion-2.js",
     fecha: "2026-10-22",
-    resumen: "Técnicas de factorización y casos prácticos."
+    resumen: "Suma y diferencia de cubos, trinomios ax² + bx + c por aspa simple y estrategia general."
   },
   {
     id: "09pn",
     titulo: "Ecuaciones de Primer Grado",
-    archivo: "factorizacion.js",
+    archivo: "ecuaciones-primer-grado.js",
     fecha: "2026-10-29",
-    resumen: "Técnicas de factorización y casos prácticos."
+    resumen: "Ecuaciones enteras, fraccionarias, signos de agrupación, literales y validación de problemas."
   }
-
 ];
